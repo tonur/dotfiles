@@ -8,11 +8,6 @@
 - link:
     ~/:
       glob: true
-      path: ./.**
+      path: ./.*
       create: true
-      exclude: [ .git ]
-
-    ~/.config:
-      glob: true
-      path: ./.config/**
-      create: true
+      exclude: [ .git, .gitmodules ]
