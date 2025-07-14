@@ -1,2 +1,4 @@
+#!/usr/bin/env zsh
+
 ZDOTDIR=$HOME/.config/zsh
 source -- "$ZDOTDIR"/.zshrc
