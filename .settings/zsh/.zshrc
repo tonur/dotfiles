@@ -3,15 +3,7 @@
 # If not running interactively, don't do anything:
 if [[ "$-" != *i* ]]; then return; fi
 
-if [[ -v WSL_DISTRO_NAME ]]; then
-  declare -a ssh_keys
-
-  for i in ~/.ssh/id_*.pub; do
-    test -f "${i%.*}" && ssh_keys+=("${${i%.*}##*/}");
-  done
-  eval $(keychain --eval --quiet $ssh_keys)
-  unset ssh_keys
-fi
+eval "$(/home/linux-brew/.linuxbrew/bin/brew shellenv)"
 
 ####################################################
 # Launch tmux
@@ -21,7 +13,7 @@ function allow_tmux() {
   [[ -z "${TMUX}" && ! -f /tmp/no_tmux && (( $+commands[tmux] )) && -z $SSH_CLIENT ]];
 }
 
-if allow_tmux; then
+if allow_tmux && type tmux; then
   SESSION_NAME=local
   export PATH=${PATH}:${HOME}/.local/bin
   tmux -q has-session -t ${SESSION_NAME} &>/dev/null
