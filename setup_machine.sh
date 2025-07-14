@@ -1,5 +1,8 @@
 #!/bin/sh
 
+git clone git@github.com:tonur/dotfiles.git ~/.config/dotfiles
+~/.config/dotfiles/install
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install zsh and python

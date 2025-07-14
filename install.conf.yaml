@@ -1,0 +1,8 @@
+- link:
+    ~/.config/:
+      glob: true
+      path: .config/**
+    ~/:
+      glob: true
+      path: ./*
+      prefix: '.'
