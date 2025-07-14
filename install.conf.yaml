@@ -9,4 +9,9 @@
 - link:
     ~/:
       glob: true
-      path: ./.*
+      path: ./.**
+      exclude: [ .git ]
+
+    ~/config/:
+      glob: true
+      path: ./.config/**
