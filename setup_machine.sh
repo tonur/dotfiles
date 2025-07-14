@@ -2,11 +2,8 @@
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install mackup
-
-mackup restore
-
-brew install zsh
+# Install zsh and python
+brew install zsh python@3.13
 
 chsh -s "$(which zsh)"
 
