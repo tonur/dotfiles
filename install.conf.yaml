@@ -10,8 +10,5 @@
     ~/:
       glob: true
       path: ./.**
+      create: true
       exclude: [ .git ]
-
-    ~/config/:
-      glob: true
-      path: ./.config/**
