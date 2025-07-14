@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 alias cp='nocorrect cp -iv' # no spelling correction on cp...
 alias rm='nocorrect rm -iv'

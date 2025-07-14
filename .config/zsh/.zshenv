@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 if [[ -v WSL_DISTRO_NAME ]]; then
   export GTK_THEME=Adwaita:dark
   export BROWSER=${HOME}/.local/bin/wsl_openlink.sh

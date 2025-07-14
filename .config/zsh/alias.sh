@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Alias
 # Fix that alias k="kubectl" is not completed
@@ -41,7 +41,7 @@ alias open='xdg-open'
 if [[ -L /bin/view ]]; then
   alias view="vim -R"
 fi
-
+#!/usr/bin/env bash
 if [[ -e /usr/bin/nvim ]]; then
   alias vim='nvim'
   alias vimdiff='nvim -d'
@@ -56,47 +56,8 @@ alias view-="view -"
 
 alias useradd="adduser"
 
-##############################################################
-# ArchLinux pacman/yay
-#
-if [[ -e /usr/bin/pacman ]]; then
-  alias pup='sudo pacman -Syu'
-  # https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Browsing_packages
-  alias pacbrowse="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
-fi
-
-if [[ -e /usr/bin/yay ]]; then
-  alias yay="sudo -u aur_builder yay "
-fi
-
-# Ack
-if [[ -e '/usr/bin/ack' ]]; then
-  alias ack="ack --follow"
-fi
-if [[ -e /usr/bin/ack-grep ]]; then
-  alias ack="ack-grep --follow"
-fi
-
-# Ag, ignore .gitignore
-if [[ -e '/usr/bin/ag' ]]; then
-  alias au="ag --unrestricted"
-fi
-
-if [[ -e /usr/bin/python2 && -e /usr/lib/python2.7/SimpleHTTPServer.py ]]; then
-  alias webshare='python2 -m SimpleHTTPServer'
-fi
-
 if [[ -e /usr/bin/python3 ]]; then
   alias webshare='python3 -m http.server'
-fi
-
-if [[ -e ~/.local/lib/ruby/gems/bin/jump-bin ]]; then
-  # jump ruby gem
-  # jump is a function that uses jump-bin
-  alias j="jump"
-  alias jl="jump -l"
-  alias ja="jump -a"
-  alias jd="jump -d"
 fi
 
 if [[ -e '/usr/bin/htop' ]]; then
@@ -109,24 +70,6 @@ alias dh1="du -h --max-depth=1"
 # -h human readable
 # -x one file system
 alias ducks="du -shx * | sort -hr | head"
-
-if [[ -e /usr/bin/ugrep ]]; then
-  alias uq='ug -Q'
-  alias ux='ug -U --hexdump'
-  alias uz='ug -z'
-  alias ugit='ug --ignore-files'
-  alias grep='ugrep -G'
-  alias egrep='ugrep -E'
-  alias fgrep='ugrep -F'
-  #  alias pgrep='ugrep -P'
-  alias xgrep='ugrep -U --hexdump'
-  alias zgrep='ugrep -zG'
-  alias zegrep='ugrep -zE'
-  alias zfgrep='ugrep -zF'
-  alias zpgrep='ugrep -zP'
-  alias zxgrep='ugrep -zU --hexdump'
-  alias xdump='ugrep -X ""'
-fi
 
 ###################################################
 # K8S aliases

@@ -1,17 +1,7 @@
+#!/usr/bin/env bash
 if [[ -o interactive && ! -f /tmp/.motd_seen ]]; then
-echo -e "\e[42mMotd:\e[0m"
+  echo -e "\e[42mMotd:\e[0m"
+  curl https://api.quotable.io/random -s | jq -r '"\(.content)\n - \(.author)"'
 
-cat << EOF
-Use:
-  git switch
-  git worktree
-  git restore
-  git status -sb
-  git pull --rebase
-  gcif
-  ctrl+g ctrl+f for fzf-git files
-  ctrl+g ctrl+b for fzf-git branches
-EOF
-
-touch /tmp/.motd_seen
+  touch /tmp/.motd_seen
 fi

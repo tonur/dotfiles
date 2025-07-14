@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # History settings
 HISTFILE="$XDG_DATA_HOME/zsh/history"
 HISTSIZE=100000                 # The number of lines loaded into the shell memory

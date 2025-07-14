@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Feature branch
 alias gfb="git switch -c"
 compdef _git gfb=git-switch

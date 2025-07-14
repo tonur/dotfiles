@@ -1,10 +1,7 @@
-#if [[ -o login ]]; then
-#  echo "I'm login shell"
-#fi
+#!/usr/bin/env zsh
 
-#if [[ -o interactive ]]; then
-#  echo "I'm interactive shell"
-#fi
+# If not running interactively, don't do anything:
+if [[ "$-" != *i* ]]; then return; fi
 
 if [[ -v WSL_DISTRO_NAME ]]; then
   declare -a ssh_keys

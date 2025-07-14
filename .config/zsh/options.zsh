@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # slashes, dots and few other things are treated as delimiters too.
 autoload -U select-word-style
 select-word-style bash

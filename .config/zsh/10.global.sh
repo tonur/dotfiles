@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [[ -f /etc/arch-release ]]; then
   export DISTRO_IS='arch'
 elif [[ -f /etc/debian_version ]]; then

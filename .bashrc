@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # ~/.bashrc: executed by bash(2) for non-login shells.
 
 # If not running interactively, don't do anything:
@@ -32,17 +33,16 @@ fi
 ###################################################################
 # Prompt
 #
-function render_prompt()
-{
+function render_prompt() {
   # Window title
-  local TITLEBAR
+  # local TITLEBAR
   # case $TERM in
-    # screen|screen-bce|screen-256color|screen-256color-bce)
-      # TITLEBAR='\033k\033\0134\033k${HOSTNAME%%.*}:${PWD/$HOME/~}\033\0134'
-      # ;;
-    # xterm*|rxvt*)
-      # TITLEBAR='\033]0;${HOSTNAME%%.*}:${PWD/$HOME/~}\007'
-      # ;;
+  # screen|screen-bce|screen-256color|screen-256color-bce)
+  # TITLEBAR='\033k\033\0134\033k${HOSTNAME%%.*}:${PWD/$HOME/~}\033\0134'
+  # ;;
+  # xterm*|rxvt*)
+  # TITLEBAR='\033]0;${HOSTNAME%%.*}:${PWD/$HOME/~}\007'
+  # ;;
   # esac
   # TITLEBAR='\[\033]0;\u:${NEW_PWD}\007\]'
 
@@ -51,15 +51,15 @@ function render_prompt()
   ENV_COLOR="$(tput setaf 3)"
   RESET="$(tput sgr0)"
   case "$(hostname)" in
-    *.production.*)
-      ENV_COLOR="$(tput setab 1)$(tput setaf 0)"
-      ;;
-    *.backend.*)
-      ENV_COLOR="$(tput setaf 1)"
-      ;;
-    *.dev.* )
-      ENV_COLOR="$(tput setaf 2)"
-      ;;
+  *.production.*)
+    ENV_COLOR="$(tput setab 1)$(tput setaf 0)"
+    ;;
+  *.backend.*)
+    ENV_COLOR="$(tput setaf 1)"
+    ;;
+  *.dev.*)
+    ENV_COLOR="$(tput setaf 2)"
+    ;;
   esac
 
   if [[ -z $SSH_TTY ]]; then
@@ -92,7 +92,6 @@ export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S '
 
 export HISTIGNORE=ls:l:ll:mc:cd:..
 export HISTCONTROL=ignoreboth:erasedups
-
 
 # Based on coreos /usr/share/baselayout/coreos-profile.sh
 if [[ $- == *i* && -e /bin/systemctl && $PLATFORM != 'Darwin' ]]; then
