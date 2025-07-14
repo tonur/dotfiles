@@ -1,85 +1,83 @@
 [user]
-  name = Christoffer Kragh Pedersen
-  email = ckp@kragh.dev
-  signingKey = ~/.ssh/id_ed25519
-[gpg]
-  format = ssh
+name = Christoffer Kragh Pedersen
+email = ckp@kragh.dev
+signingKey = ~/.ssh/id_ed25519
 [includeIf "gitdir:~/work/"]
-  path = ~/.config/git/.gitconfig-work
+path = ~/.config/git/.gitconfig-work
 [alias]
-  st = status -sb
-  ci = commit
-  co = checkout
-  sw = switch
-  w = whatchanged
-  pu = push
-  pl = pull
-  ls = log --graph --pretty=format':%s %Cblue%an, %ar %Cgreen(%h)%Creset'
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-  dlc = diff --cached HEAD^
+st = status -sb
+ci = commit
+co = checkout
+sw = switch
+w = whatchanged
+pu = push
+pl = pull
+ls = log --graph --pretty=format':%s %Cblue%an, %ar %Cgreen(%h)%Creset'
+ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+dlc = diff --cached HEAD^
 # http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
 # Allows to edit file X without the changes being checked in
-  assume   = update-index --assume-unchanged
-  unassume = update-index --no-assume-unchanged
-  assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+assume = update-index --assume-unchanged
+unassume = update-index --no-assume-unchanged
+assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 # https://notes.pinboard.in/u:8331337/5c7ac33ed987fb52db09
 # unstage is the opposite of git add.
 # uncommit removes the last commit from your repository, and puts the changes into your index
-  unstage = reset HEAD
-  uncommit = reset --soft HEAD^
-  ctags = !.git/hooks/ctags
+unstage = reset HEAD
+uncommit = reset --soft HEAD^
+ctags = !.git/hooks/ctags
 # http://gggritso.com/human-git-aliases
-  branches = "branch --all --format='%(color:#cccc00)%(objectname:short) %(color:red)%(committerdate:short) %(color:bold white)%(refname:short)'"
-  tags = tag
-  stashes = stash list
-  remotes = remote -v
+branches = "branch --all --format='%(color:#cccc00)%(objectname:short) %(color:red)%(committerdate:short) %(color:bold white)%(refname:short)'"
+tags = tag
+stashes = stash list
+remotes = remote -v
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+added = yellow
+changed = green
+untracked = cyan
 [core]
-  editor = code
-  pager = less
+editor = code
+pager = less
 [color]
-  # auto: show in columns if the output is to the terminal
-  ui = auto
-  # pager = false
+# auto: show in columns if the output is to the terminal
+ui = auto
+# pager = false
 [color "interactive"]
-  error = red bold
+error = red bold
 [push]
-  default = current
-  autoSetupRemote = true
+default = current
+autoSetupRemote = true
 [apply]
 # ignore whitespace
-  whitespace = nowarn
+whitespace = nowarn
 [github]
-  user = tonur
+user = tonur
 [status]
-  submoduleSummary = true
+submoduleSummary = true
 [commit]
-  gpgsign = true
-  # https://jvns.ca/blog/2024/02/16/popular-git-config-options/
-  verbose = true
+gpgsign = true
+# https://jvns.ca/blog/2024/02/16/popular-git-config-options/
+verbose = true
 [pull]
-  rebase = false
+rebase = false
 [init]
-  defaultBranch = master
+defaultBranch = master
 [credential "https://github.com"]
-  helper =
-  helper = !/usr/bin/gh auth git-credential
+helper =
+helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-  helper =
-  helper = !/usr/bin/gh auth git-credential
+helper =
+helper = !/usr/bin/gh auth git-credential
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
 [gpg]
-  format = ssh
+format = ssh
 [rerere]
-  enabled = true
+enabled = true
 [branch]
-  sort = -committerdate
+sort = -committerdate
 [help]
-  autocorrect = prompt
+autocorrect = prompt
